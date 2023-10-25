@@ -7,8 +7,9 @@ module.exports = {
     extend: {
       colors: {
         // Color schema for the website
-        'background-main': '#030F33',
-        'secondary-color': '#EDEEFF',
+        'background-main': '#1E1E1E',
+        'secondary-color': '#00A3E0',// Blue
+        'third-color': '#FF6B6B',// Red
       },
 
       fontFamily: {

@@ -1,12 +1,8 @@
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
   return (
-    <div>
-      <div>
-        <Header />
-      </div>
+    <div className="w-full h-screen">
       <div>
         {children}
       </div>

@@ -5,5 +5,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background-main
+  @apply bg-background-main text-white
+  
 }

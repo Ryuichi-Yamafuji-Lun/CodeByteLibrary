@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <div className="h-screen bg-white">
-      hi
+      privacy policy about and access policy contact form
     </div>
   )
 }

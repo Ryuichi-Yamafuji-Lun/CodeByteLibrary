@@ -11,7 +11,7 @@ const AccessPolicy = () => {
             <li>
               <h2>1. Acceptance of Terms</h2>
               <p>
-                By accessing and using the [Your Website Name] website, you agree to comply with and be bound by the terms and conditions of this Access Policy. If you do not agree with these terms, please do not access or use the website.
+                By accessing and using the CodeByte Library website, you agree to comply with and be bound by the terms and conditions of this Access Policy. If you do not agree with these terms, please do not access or use the website.
               </p>
             </li>
             <li>
@@ -66,7 +66,7 @@ const AccessPolicy = () => {
             <li>
               <h2>7. Contact Information</h2>
               <p>
-                If you have any questions or concerns about this Access Policy, please contact us at [Your Contact Information].
+                If you have any questions or concerns about this Access Policy, please contact us via contact form.
               </p>
             </li>
           </ol>

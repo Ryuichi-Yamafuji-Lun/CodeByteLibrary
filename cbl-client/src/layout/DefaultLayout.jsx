@@ -1,14 +1,10 @@
 import Footer from "../components/Footer";
-import TopBooks from "../pages/TopBooks";
 
-const MainLayout = ({ children }) => {
+const DefaultLayout = ({ children }) => {
   return (
     <div className="w-full">
       <div>
         {children}
-      </div>
-      <div>
-        <TopBooks />
       </div>
       <div>
         <Footer />
@@ -17,4 +13,4 @@ const MainLayout = ({ children }) => {
   )
 }
 
-export default MainLayout
+export default DefaultLayout

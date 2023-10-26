@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
 
+import Headroom from "react-headroom";
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <Headroom>
+      <div>
+
+      </div>
+    </Headroom>
   )
 }
 

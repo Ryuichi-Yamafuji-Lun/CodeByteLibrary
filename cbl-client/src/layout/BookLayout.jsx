@@ -1,8 +1,15 @@
+import Header from "../components/Header"
 
-
-const BookLayout = () => {
+const BookLayout = ({ children }) => {
   return (
-    <div>BookLayout</div>
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div>
+        {children}
+      </div>
+    </div>
   )
 }
 

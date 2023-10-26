@@ -1,8 +1,15 @@
+import Header from "../components/Header";
 
-
-const OrderLayout = () => {
+const OrderLayout = ({ children }) => {
   return (
-    <div>OrderLayout</div>
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div>
+        {children}
+      </div>
+    </div>
   )
 }
 

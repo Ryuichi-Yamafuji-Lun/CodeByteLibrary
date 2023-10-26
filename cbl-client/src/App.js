@@ -1,23 +1,30 @@
 import { Routes, Route } from "react-router-dom";
+import Headroom from "react-headroom";
 // Layouts
 import MainLayout from "./layout/MainLayout";
-import OrderLayout from "./layout/OrderLayout";
-import BookLayout from "./layout/BookLayout";
+import SecondaryLayout from "./layout/SecondaryLayout";
 // Pages
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import BookDetail from "./pages/BookDetail";
 import OrderDetail from "./pages/OrderDetail";
+// Header
+import Header from "./components/Header";
 
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout><MainPage /></MainLayout>} />
-      <Route path="/About" element={<MainLayout><About /></MainLayout>} />
-      <Route path="/BookDetail" element={<BookLayout><BookDetail /></BookLayout>} />
-      <Route path="/OrderDetail" element={<OrderLayout><OrderDetail /></OrderLayout>} />
-    </Routes>
+    <div>
+      <Headroom >
+        <Header />
+      </Headroom>
+      <Routes>
+        <Route path="/" element={<MainLayout><MainPage /></MainLayout>} />
+        <Route path="/About" element={<MainLayout><About /></MainLayout>} />
+        <Route path="/BookDetail" element={<SecondaryLayout><BookDetail /></SecondaryLayout>} />
+        <Route path="/OrderDetail" element={<SecondaryLayout><OrderDetail /></SecondaryLayout>} />
+      </Routes>
+    </div>
   );
 }
 

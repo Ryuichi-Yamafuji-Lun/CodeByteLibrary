@@ -10,6 +10,7 @@ module.exports = {
         'background-main': '#1E1E1E',
         'secondary-color': '#00A3E0',// Blue
         'third-color': '#FF6B6B',// Red
+        'header-color': '#FFFFFF', 
       },
 
       fontFamily: {

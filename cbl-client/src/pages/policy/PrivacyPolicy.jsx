@@ -2,13 +2,13 @@ import { FaTimes } from "react-icons/fa";
 
 const PrivacyPolicy = ({ closePrivacyPolicy }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="w-[600px] p-4 rounded-lg bg-white relative">
-        <button onClick={closePrivacyPolicy} className="absolute top-2 right-2 text-gray-500">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 text-white">
+      <div className="w-[600px] p-4 rounded-lg bg-gray-900 relative">
+        <button onClick={closePrivacyPolicy} className="absolute top-2 right-2 text-gray-500 hover:text-white">
           <FaTimes />
         </button>
-        <div className="text-center text-lg underline">Access Policy</div>
-        <div className="p-2">
+        <p className="text-center text-lg font-bold">Privacy Policy</p>
+        <div className="p-2 space-y-4">
           <p className="text-2xl">1. Introduction</p>
           <p>
             Welcome to CodeByte Library. We are committed to protecting the privacy and security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard the personal information you provide to us when you access and use our e-commerce website. By accessing or using our website, you consent to the practices described in this Privacy Policy.

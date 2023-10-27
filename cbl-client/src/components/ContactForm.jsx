@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 const ContactForm = ({ closeContactForm }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="w-[600px] p-4 rounded-lg bg-gray-900 relative max-h-[80vh] overflow-y-auto">
+      <div className="w-[600px] p-4 rounded-lg bg-background-main relative max-h-[80vh] overflow-y-auto">
         <button onClick={closeContactForm} className="absolute top-2 right-2 text-gray-500 hover:text-white">
           <FaTimes />
         </button>

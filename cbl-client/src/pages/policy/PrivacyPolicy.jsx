@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 const PrivacyPolicy = ({ closePrivacyPolicy }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 text-white">
-      <div className="w-[600px] p-4 rounded-lg bg-gray-900 relative">
+      <div className="w-[600px] p-4 rounded-lg bg-background-main relative">
         <button onClick={closePrivacyPolicy} className="absolute top-2 right-2 text-gray-500 hover:text-white">
           <FaTimes />
         </button>

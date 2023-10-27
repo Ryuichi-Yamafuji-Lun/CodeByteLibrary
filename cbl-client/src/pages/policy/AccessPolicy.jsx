@@ -47,7 +47,7 @@ const AccessPolicy = ({ closeAccessPolicy }) => {
               <h2>4. Intellectual Property</h2>
               <ul>
                 <li>
-                  <p>4.1. Ownership: All content, trademarks, logos, and other intellectual property on the website are the property of [Your Company Name] or its licensors and protected by copyright and other intellectual property laws.</p>
+                  <p>4.1. Ownership: All content, trademarks, logos, and other intellectual property on the website are the property of CodeByte Library or its licensors and protected by copyright and other intellectual property laws.</p>
                 </li>
                 <li>
                   <p>4.2. Limited License: You are granted a limited, non-exclusive, and non-transferable license to access and use the website for personal, non-commercial purposes. This license does not grant you ownership or rights to use our intellectual property for any other purpose.</p>

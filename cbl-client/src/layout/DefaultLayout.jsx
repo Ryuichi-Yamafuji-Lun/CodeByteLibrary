@@ -1,16 +1,14 @@
-import Footer from "../components/Footer";
+import Footer from '../components/Footer';
 
 const DefaultLayout = ({ children }) => {
   return (
-    <div className="w-full">
-      <div>
+    <div className="w-full min-h-screen flex flex-col">
+      <div className="flex-grow">
         {children}
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default DefaultLayout
+export default DefaultLayout;

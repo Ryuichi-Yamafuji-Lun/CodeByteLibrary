@@ -1,9 +1,12 @@
-import React from 'react';
+import { FaTimes } from "react-icons/fa";
 
-const AccessPolicy = () => {
+const AccessPolicy = ({ closeAccessPolicy }) => {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="w-[600px] m-3 mt-5 p-4 rounded-lg overflow-hidden bg-slate-950/50 backdrop-blur-3xl shadow-[inset_0px_1px_0px_0px_rgba(148,163,184,0.1)] flex flex-col">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="w-[600px] p-4 rounded-lg bg-white relative max-h-[80vh] overflow-y-auto">
+        <button onClick={closeAccessPolicy} className="absolute top-2 right-2 text-gray-500">
+          <FaTimes />
+        </button>
         <div className="text-center text-lg underline">Access Policy</div>
         <div className="p-2">
           <p>Last updated: [10/30/2023]</p>

@@ -43,13 +43,13 @@ const Footer = () => {
       <div className="flex-grow">
       </div>
       <div className="p-4 flex justify-center text-sm">
-        <button onClick={openPrivacyPolicy}>Privacy Policy</button> 
+        <button onClick={openPrivacyPolicy} className="hover:text-secondary-color">Privacy Policy</button> 
         <span className="m-2">|</span>
-        <button onClick={openAccessPolicy} >Access Policy</button>
+        <button onClick={openAccessPolicy} className="hover:text-secondary-color">Access Policy</button>
         <span className="m-2">|</span>
-        <button onClick={openSitePolicy}>Site Policy</button>
+        <button onClick={openSitePolicy} className="hover:text-secondary-color">Site Policy</button>
         <span className="m-2">|</span>
-        <button onClick={openContactForm}>Contact Us</button>
+        <button onClick={openContactForm} className="hover:text-secondary-color">Contact Us</button>
       </div>
       {isPrivacyPolicyOpen && (
         <PrivacyPolicy closePrivacyPolicy={closePage} />

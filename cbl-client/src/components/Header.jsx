@@ -22,17 +22,17 @@ const Header = () => {
       {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-6">
         <li>
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center hover:text-secondary-color">
             <p className="pl-1">Home</p>
           </Link>
         </li>
-        <li className="flex items-center">
+        <li className="flex items-center hover:text-secondary-color">
           <Link to="/About" className="flex items-center">
             <p className="pl-1">About</p>
           </Link>
         </li>
         <li>
-          <Link to="/OrderDetail" className="flex items-center p-1">
+          <Link to="/OrderDetail" className="flex items-center p-1 hover:text-secondary-color">
             <FaShoppingCart/>
           </Link>
         </li>

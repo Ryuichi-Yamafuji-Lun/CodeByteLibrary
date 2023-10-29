@@ -10,14 +10,14 @@ const MainPage = () => {
 
   const GOOGLE_BOOK_API_KEY = process.env.REACT_APP_GOOGLE_BOOK_API_KEY;
 
-  const categoryQuery = `computer+science+inauthor:keyes`;
-  const searchQuery = search.replace(/ /g, '+');
+  const categoryQuery = "computer";
+  const searchQuery = search + categoryQuery;
 
   const searchBook=(event)=>{
     if(event.key === "Enter"){
       axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${categoryQuery}+${searchQuery}&key=${GOOGLE_BOOK_API_KEY}`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${GOOGLE_BOOK_API_KEY}` 
       )
       .then((response) => {
         // check response

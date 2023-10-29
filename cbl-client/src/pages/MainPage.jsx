@@ -1,33 +1,37 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from 'react';
+import axios from 'axios';
+import BookCards from '../components/BookCards';
 
-// Image
+// Images
 import BgImg from "../assets/images/HomePageIMG.jpg";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from 'react-icons/fa';
 
 const MainPage = () => {
-  const [search, setSearch] = useState("");
-
+  const [search, setSearch] = useState('');
+  const [books, setBooks] = useState([]);
   const GOOGLE_BOOK_API_KEY = process.env.REACT_APP_GOOGLE_BOOK_API_KEY;
-
-  const categoryQuery = "computer";
+  const categoryQuery = 'computer';
   const searchQuery = search + categoryQuery;
 
-  const searchBook=(event)=>{
-    if(event.key === "Enter"){
-      axios
+  const searchBook = () => {
+    axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${GOOGLE_BOOK_API_KEY}` 
+        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${GOOGLE_BOOK_API_KEY}&maxResults=10`
       )
       .then((response) => {
-        // check response
-        console.log(response.data);
+        console.log(response.data)
+        setBooks(response.data.items || []);
       })
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      searchBook();
     }
-  }
+  };
 
   const WelcomeStyle = {
     backgroundImage: `url(${BgImg})`,
@@ -45,8 +49,8 @@ const MainPage = () => {
                 placeholder="Search for a Book"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                onKeyDown={searchBook}
-                className="w-full px-4 py-2 bg-background-main border-2 border-background-main border-r-white"
+                onKeyDown={handleKeyPress}
+                className="w-full px-4 py-2 bg-background-main rounded-l-lg border-2 border-background-main border-r-white"
               />
               <button
                 onClick={searchBook}
@@ -58,8 +62,21 @@ const MainPage = () => {
           </div>
         </div>
       </div>
+      <div className="bg-background-main p-4">
+        <h1 className="text-4xl font-bold mb-4 text-center">Search Results</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {books.map((book, index) => (
+            <BookCards
+              key={index}
+              title={book.volumeInfo.title}
+              authors={book.volumeInfo.authors || []}
+              thumbnail={book.volumeInfo.imageLinks?.thumbnail || ''}
+            />
+          ))}
+        </div>
+      </div>
     </div>
-  ); 
+  );
 }
 
-export default MainPage;
+export default MainPage

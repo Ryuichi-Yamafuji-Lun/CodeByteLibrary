@@ -39,7 +39,7 @@ const MainPage = () => {
       <div style={WelcomeStyle} className="bg-cover bg-center h-full relative">
         <div className="h-full absolute inset-0 flex items-center justify-center">
           <div className="p-4 text-center">
-            <p className="text-6xl text-black">CodeByte Library</p>
+            <p className="text-6xl pt-4 text-black">CodeByte Library</p>
             <div className="mt-2 flex items-center border bg-background-main border-gray-300 rounded-lg">
               <input
                 type="text"

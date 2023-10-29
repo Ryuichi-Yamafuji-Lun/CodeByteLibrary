@@ -14,7 +14,6 @@ const MainPage = () => {
   const searchQuery = search.replace(/ /g, '+');
 
   const searchBook=(event)=>{
-    console.log("API Key:", GOOGLE_BOOK_API_KEY);
     if(event.key === "Enter"){
       axios
       .get(

@@ -9,14 +9,11 @@ import { FaSearch } from 'react-icons/fa';
 const MainPage = () => {
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
-  const GOOGLE_BOOK_API_KEY = process.env.REACT_APP_GOOGLE_BOOK_API_KEY;
-  const categoryQuery = 'computer';
-  const searchQuery = search + categoryQuery;
 
   const searchBook = () => {
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${GOOGLE_BOOK_API_KEY}&maxResults=10`
+        
       )
       .then((response) => {
         console.log(response.data)

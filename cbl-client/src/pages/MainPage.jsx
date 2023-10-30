@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { database } from '../config/Config';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import BookCards from '../components/BookCards';
 
 // Images
@@ -10,18 +11,33 @@ const MainPage = () => {
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
 
-  const searchBook = () => {
-    axios
-      .get(
-        
-      )
-      .then((response) => {
-        console.log(response.data)
-        setBooks(response.data.items || []);
-      })
-      .catch((error) => {
-        console.error(error);
+  const searchBook = async () => {
+    const firestore = database;
+    const booksRef = collection(firestore, "Books");
+    let q = query(booksRef); // Create a base query
+
+    if (search) {
+      // Apply filters to the base query
+      q = query(booksRef, where("title", "==", search));
+    }
+
+    try {
+      const querySnapshot = await getDocs(q);
+      const results = [];
+
+      querySnapshot.forEach((doc) => {
+        // Extract the data for each book
+        const bookData = doc.data();
+        results.push(bookData);
       });
+
+      // Set the search results in the state
+      setBooks(results);
+
+      console.log("Search Results:", results);
+    } catch (error) {
+      console.error("Error searching for books:", error);
+    }
   };
 
   const handleKeyPress = (event) => {
@@ -65,9 +81,9 @@ const MainPage = () => {
           {books.map((book, index) => (
             <BookCards
               key={index}
-              title={book.volumeInfo.title}
-              authors={book.volumeInfo.authors || []}
-              thumbnail={book.volumeInfo.imageLinks?.thumbnail || ''}
+              title={book.volumeInfo?.title || 'Title Not Available'}
+              authors={book.volumeInfo?.authors || []}
+              thumbnail={book.volumeInfo?.imageLinks?.thumbnail || ''}
             />
           ))}
         </div>

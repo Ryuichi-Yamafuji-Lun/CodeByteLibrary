@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Headroom from "react-headroom";
 // Layouts
 import DefaultLayout from "./layout/DefaultLayout";
-import MainLayout from "./layout/MainLayout";
 import SecondaryLayout from "./layout/SecondaryLayout";
 // Pages
 import MainPage from "./pages/MainPage";
@@ -19,7 +18,7 @@ function App() {
         <Header />
       </Headroom>
       <Routes>
-        <Route path="/" element={<MainLayout><MainPage /></MainLayout>} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/About" element={<DefaultLayout><About /></DefaultLayout>} />
         <Route path="/BookDetail" element={<SecondaryLayout><BookDetail /></SecondaryLayout>} />
         <Route path="/OrderDetail" element={<SecondaryLayout><OrderDetail /></SecondaryLayout>} />

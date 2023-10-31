@@ -22,7 +22,6 @@ const Footer = () => {
     setIsAccessPolicyOpen(true);
   };
 
-
   const openSitePolicy = () => {
     setIsSitePolicyOpen(true);
   };
@@ -41,9 +40,10 @@ const Footer = () => {
   return (
     <div className="bg-white text-black p-4 flex flex-col items-center justify-center">
       <div className="flex-grow">
+        {/* The empty div will take up space and push the content down */}
       </div>
       <div className="p-4 flex justify-center text-sm">
-        <button onClick={openPrivacyPolicy} className="hover:text-secondary-color">Privacy Policy</button> 
+        <button onClick={openPrivacyPolicy} className="hover:text-secondary-color">Privacy Policy</button>
         <span className="m-2">|</span>
         <button onClick={openAccessPolicy} className="hover:text-secondary-color">Access Policy</button>
         <span className="m-2">|</span>

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { database } from '../config/Config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import BookCards from '../components/BookCards';
+import Footer from '../components/Footer';
 
 // Images
-import BgImg from "../assets/images/HomePageIMG.jpg";
+import BgImg from '../assets/images/HomePageIMG.jpg';
 import { FaSearch } from 'react-icons/fa';
 
 const MainPage = () => {
@@ -13,12 +14,12 @@ const MainPage = () => {
 
   const searchBook = async () => {
     const firestore = database;
-    const booksRef = collection(firestore, "Books");
+    const booksRef = collection(firestore, 'Books');
     let q = query(booksRef); // Create a base query
 
     if (search) {
       // Apply filters to the base query
-      q = query(booksRef, where("title", "==", search));
+      q = query(booksRef, where('title', '==', search.toUpperCase()));
     }
 
     try {
@@ -34,9 +35,9 @@ const MainPage = () => {
       // Set the search results in the state
       setBooks(results);
 
-      console.log("Search Results:", results);
+      console.log('Search Results:', results);
     } catch (error) {
-      console.error("Error searching for books:", error);
+      console.error('Error searching for books:', error);
     }
   };
 
@@ -75,18 +76,27 @@ const MainPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-background-main p-4">
-        <h1 className="text-4xl font-bold mb-4 text-center">Search Results</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {books.map((book, index) => (
-            <BookCards
-              key={index}
-              title={book.volumeInfo?.title || 'Title Not Available'}
-              authors={book.volumeInfo?.authors || []}
-              thumbnail={book.volumeInfo?.imageLinks?.thumbnail || ''}
-            />
-          ))}
-        </div>
+      <div>
+        {books.length > 0 && ( 
+          <div className="bg-background-main p-4">
+            <h1 className="text-4xl font-bold mb-4 text-center">Search Results</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {books.map((book, index) => (
+                <BookCards
+                  key={index}
+                  title={book.title || 'Title Not Available'}
+                  authors={book.author || []}
+                  thumbnail={book.image || ''}
+                  isbn = {book.isbn || 'ISBN Not Available'}
+                  price = {book.price || 'Price Not Available'}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

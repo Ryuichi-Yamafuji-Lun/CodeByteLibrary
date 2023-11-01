@@ -16,11 +16,14 @@ const MainPage = () => {
   const searchBook = async () => {
     const firestore = database;
     const booksRef = collection(firestore, 'Books');
-    let q = query(booksRef); // Create a base query
+    let q;
 
     if (search) {
-      // Apply filters to the base query
       q = query(booksRef, where('title', '==', search.toUpperCase()));
+    } else {
+      // Handle the case where there's no search query
+      // You can use a default query or empty query, depending on your use case.
+      q = query(booksRef, where('isbn', '==', ''));
     }
 
     try {
@@ -78,22 +81,22 @@ const MainPage = () => {
         </div>
       </div>
       <div>
-        {books.length > 0 && ( 
+        {books.length > 0 && (
           <div className="bg-background-main p-4">
             <h1 className="text-4xl font-bold mb-4 text-center">Search Results</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {books.map((book) => (
-                  <Link to={`/Book/${book.isbn}`} key={book.isbn} state={{ bookData: book }}>
-                    <BookCards
-                      title={book.title || 'Title Not Available'}
-                      authors={book.author || []}
-                      thumbnail={book.image || ''}
-                      isbn={book.isbn || 'ISBN Not Available'}
-                      price={book.price || 'Price Not Available'}
-                      bookData={book} 
-                    />
-                  </Link>
-                ))}
+                <Link to={`/Book/${book.isbn}`} key={book.isbn} state={{ bookData: book }}>
+                  <BookCards
+                    title={book.title || 'Title Not Available'}
+                    authors={book.author || []}
+                    thumbnail={book.image || ''}
+                    isbn={book.isbn || 'ISBN Not Available'}
+                    price={book.price || 'Price Not Available'}
+                    bookData={book}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         )}

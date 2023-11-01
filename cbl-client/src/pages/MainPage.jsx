@@ -22,7 +22,6 @@ const MainPage = () => {
       q = query(booksRef, where('title', '==', search.toUpperCase()));
     } else {
       // Handle the case where there's no search query
-      // You can use a default query or empty query, depending on your use case.
       q = query(booksRef, where('isbn', '==', ''));
     }
 

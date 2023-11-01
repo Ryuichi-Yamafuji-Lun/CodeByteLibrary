@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/About" element={<DefaultLayout><About /></DefaultLayout>} />
-        <Route path="/BookDetail" element={<SecondaryLayout><BookDetail /></SecondaryLayout>} />
+        <Route path="/Book/:isbn" element={<SecondaryLayout><BookDetail /></SecondaryLayout>} />
         <Route path="/OrderDetail" element={<SecondaryLayout><OrderDetail /></SecondaryLayout>} />
       </Routes>
     </div>

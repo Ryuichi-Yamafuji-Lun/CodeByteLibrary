@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { database } from '../config/Config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 import BookCards from '../components/BookCards';
 import Footer from '../components/Footer';
 
@@ -81,16 +82,18 @@ const MainPage = () => {
           <div className="bg-background-main p-4">
             <h1 className="text-4xl font-bold mb-4 text-center">Search Results</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {books.map((book, index) => (
-                <BookCards
-                  key={index}
-                  title={book.title || 'Title Not Available'}
-                  authors={book.author || []}
-                  thumbnail={book.image || ''}
-                  isbn = {book.isbn || 'ISBN Not Available'}
-                  price = {book.price || 'Price Not Available'}
-                />
-              ))}
+              {books.map((book) => (
+                  <Link to={`/Book/${book.isbn}`} key={book.isbn} state={{ bookData: book }}>
+                    <BookCards
+                      title={book.title || 'Title Not Available'}
+                      authors={book.author || []}
+                      thumbnail={book.image || ''}
+                      isbn={book.isbn || 'ISBN Not Available'}
+                      price={book.price || 'Price Not Available'}
+                      bookData={book} 
+                    />
+                  </Link>
+                ))}
             </div>
           </div>
         )}

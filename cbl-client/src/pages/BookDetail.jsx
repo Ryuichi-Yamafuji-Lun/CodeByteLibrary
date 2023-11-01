@@ -6,7 +6,7 @@ const BookDetail = () => {
 
   if (!bookData) {
     return (
-      <div>
+      <div className="w-full h-full flex justify-center items-center">
         <p>Book not found</p>
       </div>
     );
@@ -33,9 +33,9 @@ const BookDetail = () => {
           <div className="col-span-1 flex justify-center">
             <div className='w-64 border-2 shadow-lg rounded-lg'>
               <p className="text-third-color text-lg p-4 mb-4">Price: ¥{bookData.price || 'Price Not Available'}</p>
-              <button className="bg-primary-color text-white py-2 px-4 rounded hover-bg-secondary-color">
-                Add to Cart
-              </button>
+              <div className="text-center px-2">
+                <button className="w-full bg-secondary-color text-white py-2 px-5 rounded hover:scale-105">Add to Cart</button>
+              </div>
             </div>
           </div>
         </div>

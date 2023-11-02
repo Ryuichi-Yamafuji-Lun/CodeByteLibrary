@@ -110,8 +110,8 @@ const BookDetail = () => {
           <div className="col-span-1 flex justify-center">
             <div className="w-64 border-2 shadow-lg rounded-lg">
               <p className="text-third-color text-lg p-4 mb-4">Price: ¥{bookData.price || 'Price Not Available'}</p>
-              <div className="text-center px-2">
-                <button className="w-full bg-secondary-color text-white py-2 px-5 rounded hover:scale-105">Add to Cart</button>
+              <div className="text-center px-2 hover:scale-105">
+                <Link to="/OrderDetail" className="w-full bg-secondary-color text-white py-2 px-5 rounded ">Add to Cart</Link>
               </div>
             </div>
           </div>

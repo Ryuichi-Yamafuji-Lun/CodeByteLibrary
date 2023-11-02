@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -23,6 +23,11 @@ const About = () => {
           <p className="text-lg mt-3">
             At CodeByte Library, we're not just selling books; we're fostering a community of learners, developers, and dreamers. Join us in the journey of continuous learning and discovery. Browse our virtual shelves, explore the limitless possibilities of computer science, and empower your mind one byte at a time.
           </p>
+          <div className="flex justify-center items-center text-2xl mt-5">
+            <Link to="/SiteMap" className="hover:text-secondary-color">
+              Site Map
+            </Link>
+          </div>
         </div>
       </div>
     </div>

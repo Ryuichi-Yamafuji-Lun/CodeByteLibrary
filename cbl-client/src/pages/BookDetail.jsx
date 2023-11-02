@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { database } from '../config/Config';
 import { collection, query, where, getDocs, addDoc } from 'firebase/firestore';
 
@@ -76,8 +76,15 @@ const BookDetail = () => {
 
   if (!bookData) {
     return (
-      <div className="w-full h-full flex justify-center items-center">
-        <p>Book not found</p>
+      <div className="w-full h-full flex flex-col items-center text-center justify-center">
+        <div>
+          <p>Book not found</p>
+        </div>
+        <div>
+          <Link to="/">
+            <p className='hover:text-secondary-color'>Return</p>
+          </Link>
+        </div>
       </div>
     );
   }

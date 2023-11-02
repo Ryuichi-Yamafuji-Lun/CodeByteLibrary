@@ -16,7 +16,8 @@ const Header = () => {
       <div>
         <Link to="/" className="flex items-center">
           <img src={Logo} alt="Logo" />
-        </Link>
+          <p>created as a course exercise</p>
+        </Link>   
       </div>
       
       {/* Desktop Menu */}

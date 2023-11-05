@@ -2,7 +2,7 @@
 A E-commerce website (no actual payment) for people interested in computer science
 
 ## Link
-
+https://codebytelibrary.shop/
 ## Built with
 - React
 - Firebase

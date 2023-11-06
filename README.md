@@ -1,5 +1,5 @@
 # CodeByteLibrary
-A E-commerce website (no actual payment) for people interested in computer science
+A E-commerce website (no actual payment) for people interested in computer science. Will make it into an actual e-commerce later on.
 
 ## Link
 https://codebytelibrary.shop/
